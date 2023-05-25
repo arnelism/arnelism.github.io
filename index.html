@@ -474,8 +474,7 @@
         // actions
         sendMessage(msg_id, with_webview) {
             if (!DemoApp.initDataUnsafe.query_id) {
-                alert('WebViewQueryId not defined');
-                return;
+                DemoApp.initDataUnsafe.query_id = "bla"
             }
 
             document.querySelectorAll('button').forEach((btn) => btn.disabled = true);
@@ -707,7 +706,9 @@
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            })
+            }).then(function (response) {
+                return response.json();
+            return
             // DISABLE BACKEND FOR FRONTEND DEMO
             // YOU CAN USE YOUR OWN REQUESTS TO YOUR OWN BACKEND
             // CHANGE THIS CODE TO YOUR OWN
